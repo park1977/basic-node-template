@@ -4,8 +4,9 @@
   "description": "nodejs template starter",
   "main": "index.js",
   "type": "module",
-  "scripts": {},
-  "keywords": [],
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "Park Lu",
   "license": "ISC",
   "devDependencies": {
