@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "nodejs template starter",
   "main": "index.js",
+  "type": "module",
   "scripts": {},
   "keywords": [],
   "author": "Park Lu",
   "license": "ISC",
   "devDependencies": {
     "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }
