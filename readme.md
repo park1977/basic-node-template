@@ -32,3 +32,7 @@ DB_MAX_POOL_SIZE=5
 DB_HOST=mongo
 DB_PORT=27017
 ```
+
+## Logging 
+
+https://github.com/winstonjs/winston/blob/master/examples/quick-start.js
