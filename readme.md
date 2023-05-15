@@ -36,3 +36,12 @@ DB_PORT=27017
 ## Logging 
 
 https://github.com/winstonjs/winston/blob/master/examples/quick-start.js
+
+set timer! 
+
+``` javascript
+const profiler = logger.startTimer();
+setTimeout(function () {
+  profiler.done({ message: 'Logging message' });
+}, 1000);
+```

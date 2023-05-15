@@ -32,3 +32,8 @@ if (process.env.NODE_ENV !== 'production') {
 // logger.log('info', 'Hello, this is a raw logging event');
 // logger.warn('eeeee');
 // logger.error('eeeee', { hello: 'world' });
+
+// const profiler = logger.startTimer();
+// setTimeout(function () {
+//   profiler.done({ message: 'Logging message' });
+// }, 1000);
