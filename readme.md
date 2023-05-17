@@ -45,3 +45,9 @@ setTimeout(function () {
   profiler.done({ message: 'Logging message' });
 }, 1000);
 ```
+
+## Jest
+
+```commandline
+npm run test
+```
