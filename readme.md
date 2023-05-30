@@ -16,13 +16,16 @@ Files with a .js extension when the nearest parent package.json file contains a 
 .env sample: 
 
 ``` env
- # Environment Name
+# Environment Name
 NODE_ENV=development
+
+# Log file rotate
+LOG_ROTATE=True
 
 # Server listen to this port
 PORT=3000
 
-#Cors
+# Cors
 CORS_URL=*
 
 # Databse
