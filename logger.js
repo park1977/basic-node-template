@@ -1,7 +1,6 @@
+import 'dotenv/config';
 import { createLogger, format, transports } from 'winston';
-// The DailyRotateFile transport can rotate files by minute, hour, day, month, year or weekday.
-// npm i winston-daily-rotate-file if use this plugin
-// import DailyRotateFile from 'winston-daily-rotate-file';
+import DailyRotateFile from 'winston-daily-rotate-file';
 
 export const logger = createLogger({
   level: 'info',
@@ -17,13 +16,6 @@ export const logger = createLogger({
   transports: [
     new transports.File({ filename: 'logs/error.log', level: 'error' }),
     new transports.File({ filename: 'logs/combined.log' }),
-    // --- winston-daily-rotate-file template --- //
-    // new DailyRotateFile({
-    //   filename: 'logs/%DATE%.log',
-    //   datePattern: 'YYYY-MM-DD',
-    //   frequency: 'daily',
-    //   maxFiles: '14d',
-    // }),
   ],
 });
 
@@ -35,6 +27,16 @@ if (process.env.NODE_ENV !== 'production') {
   logger.add(
     new transports.Console({
       format: format.combine(format.colorize(), format.simple()),
+    })
+  );
+}
+
+if (process.env.LOG_ROTATE === 'True') {
+  logger.add(
+    new DailyRotateFile({
+      filename: 'logs/%DATE%.log',
+      datePattern: 'YYYY-MM-DD',
+      frequency: 'daily',
     })
   );
 }
